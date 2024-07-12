@@ -1,3 +1,1 @@
-# flutter_project
-
-A new Flutter project.
+# Food Recipe App
