@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 
-class MyHome extends StatefulWidget {
-  const MyHome({super.key});
+class MyHomepage extends StatefulWidget {
+  const MyHomepage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _MyHomeState();
+  State<StatefulWidget> createState() => _MyHomepageState();
 }
 
-class _MyHomeState extends State<MyHome> {
-  int count = 0;
+class _MyHomepageState extends State<MyHomepage> {
+  int _count = 0;
+  String _text = '';
+  final _textController = TextEditingController();
+
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +30,7 @@ class _MyHomeState extends State<MyHome> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '$count',
+                '$_count',
                 style: const TextStyle(
                   color: Colors.black12,
                   fontSize: 30,
@@ -38,17 +46,36 @@ class _MyHomeState extends State<MyHome> {
                 onPressed: () {},
                 child: const Text('Elevated Button'),
               ),
-              OutlinedButton(
-                onPressed: () {},
-                child: const Text('Outlined Button'),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: TextField(
+                      controller: _textController,
+                      decoration: const InputDecoration(
+                        labelText: 'Enter something',
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (input) {
+                        _text = input;
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    flex: 1,
+                    child: OutlinedButton(
+                      onPressed: () {
+                        print(_text);
+                        print(_textController.text);
+                        setState(() {});
+                      },
+                      child: const Text('Outlined Button'),
+                    ),
+                  ),
+                ],
               ),
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: 'Enter something',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 400),
+              Text(_textController.text),
               Container(
                 color: Colors.lime,
                 child: Padding(
@@ -68,7 +95,7 @@ class _MyHomeState extends State<MyHome> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            count++;
+            _count++;
           });
         },
         child: const Icon(Icons.add),
