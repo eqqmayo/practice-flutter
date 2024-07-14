@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/web_browser/main_screen.dart';
+import 'package:flutter_project/my_gallery/my_gallery.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
         primarySwatch: Colors.green,
         useMaterial3: false,
       ),
-      home: const MainScreen(),
+      home: const MyGallery(),
     );
   }
 }

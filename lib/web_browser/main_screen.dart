@@ -49,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
             itemBuilder: (context) => [
               const PopupMenuItem(
                 value: 'https://www.google.com',
-                child: const Text('Google'),
+                child: Text('Google'),
               ),
               const PopupMenuItem(
                 value: 'https://www.youtube.com',
@@ -66,9 +66,7 @@ class _MainScreenState extends State<MainScreen> {
       body: PopScope(
         canPop: false,
         onPopInvoked: (didPop) async {
-          if (didPop) {
-            return;
-          }
+          if (didPop) return;
           if (await _controller.canGoBack()) {
             await _controller.goBack();
           } else {
