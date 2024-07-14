@@ -37,7 +37,6 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bmi = weight / ((height / 100.0) * (height / 100.0));
-    String result = 'Normal';
 
     return Scaffold(
       appBar: AppBar(
