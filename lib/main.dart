@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/xylophone/xylophone.dart';
+import 'package:flutter_project/tilt_sensor/tilt_sensor.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         useMaterial3: false,
       ),
-      home: const Xylophone(),
+      home: const TiltSensor(),
     );
   }
 }

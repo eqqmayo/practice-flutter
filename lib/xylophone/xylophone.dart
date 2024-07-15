@@ -36,6 +36,7 @@ class _XylophoneState extends State<Xylophone> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+
     return Scaffold(
         appBar: AppBar(
           title: const Text('Xylophone'),
