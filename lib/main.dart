@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/my_gallery/my_gallery.dart';
+import 'package:flutter_project/xylophone/xylophone.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,10 +12,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blueGrey,
         useMaterial3: false,
       ),
-      home: const MyGallery(),
+      home: const Xylophone(),
     );
   }
 }

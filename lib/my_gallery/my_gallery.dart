@@ -27,16 +27,15 @@ class _MyGalleryState extends State<MyGallery> {
     images = await _picker.pickMultiImage();
 
     if (images.isNotEmpty) {
-      Timer.periodic(Duration(seconds: 5), (timer) {
+      Timer.periodic(const Duration(seconds: 5), (timer) {
         currentPage++;
 
         if (currentPage == images.length) {
           currentPage = 0;
         }
-
         _pageController.animateToPage(
           currentPage,
-          duration: Duration(milliseconds: 350),
+          duration: const Duration(milliseconds: 350),
           curve: Curves.easeIn,
         );
       });
